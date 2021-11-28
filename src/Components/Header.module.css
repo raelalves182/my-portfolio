@@ -1,0 +1,18 @@
+.header {
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: white;
+  top: 0px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}

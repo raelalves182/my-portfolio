@@ -4,13 +4,14 @@ import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <nav className="container">
-        <Link to="/" aria-label="My Portfólio">Home</Link>
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to="/" aria-label="My Portfolio">Logo</Link>
+        <Link to="/">Home</Link>
         <Link to="/portfolio">Portfolio</Link>
         <Link to="/contact">Contact me</Link>
       </nav>
-    </div>
+    </header>
   )
 }
 
