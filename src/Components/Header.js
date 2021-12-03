@@ -9,9 +9,9 @@ const Header = () => {
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/" aria-label="My Portfolio"><Dogs/></Link>
         <div className={styles.links}>
-          <Link to="/">Home</Link>
-          <Link to="/portfolio">Portfolio</Link>
-          <Link to="/contact">Contact me</Link>
+          <Link to="/">HOME</Link>
+          <Link to="/portfolio">PORTFOLIO</Link>
+          <Link to="/contact">CONTACT ME</Link>
         </div>
       </nav>
     </header>
