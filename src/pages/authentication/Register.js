@@ -2,8 +2,8 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Box, Card, Link, Container, Typography } from '@mui/material';
-// hooks
-// import useAuth from '../../hooks/useAuth';
+// Image
+import { ReactComponent as Beaten } from '../../assets/beaten.svg';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // components
@@ -30,6 +30,13 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   margin: theme.spacing(0)
 }));
 
+const ImageStyle = styled(Box)(() => ({
+  position: 'absolute',
+  zIndex: '1',
+  top: '45%',
+  right: '30%'
+}));
+
 const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 384,
   margin: 'auto',
@@ -47,6 +54,9 @@ export default function Register() {
     <RootStyle title="Register | Beaten Games">
       <MHidden width="mdDown">
         <SectionStyle>
+          <ImageStyle>
+            <Beaten />
+          </ImageStyle>
           <img alt="register" src="/static/illustrations/auth.png" />
         </SectionStyle>
       </MHidden>

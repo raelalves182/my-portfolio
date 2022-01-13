@@ -2,6 +2,8 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Box, Card, Stack, Link, Container, Typography, Button } from '@mui/material';
+// Image
+import { ReactComponent as Beaten } from '../../assets/beaten.svg';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // hooks
@@ -21,6 +23,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
 }));
 
 const SectionStyle = styled(Card)(({ theme }) => ({
+  position: 'relative',
   width: '100%',
   maxWidth: 464,
   boxShadow: 'none',
@@ -28,6 +31,13 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   margin: theme.spacing(0)
+}));
+
+const ImageStyle = styled(Box)(() => ({
+  position: 'absolute',
+  zIndex: '1',
+  top: '45%',
+  right: '30%'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -57,6 +67,9 @@ export default function Login() {
     <RootStyle title="Login | Beaten Games">
       <MHidden width="mdDown">
         <SectionStyle>
+          <ImageStyle>
+            <Beaten />
+          </ImageStyle>
           <img src="/static/illustrations/auth.png" alt="login" />
         </SectionStyle>
       </MHidden>
