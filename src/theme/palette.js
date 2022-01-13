@@ -31,7 +31,7 @@ const GREY = {
 const PRIMARY = {
   lighter: '#C8FACD',
   light: '#5BE584',
-  main: '#00AB55',
+  main: '#FF0099',
   dark: '#007B55',
   darker: '#005249',
   contrastText: '#fff'
@@ -39,7 +39,7 @@ const PRIMARY = {
 const SECONDARY = {
   lighter: '#D6E4FF',
   light: '#84A9FF',
-  main: '#3366FF',
+  main: '#FF0099',
   dark: '#1939B7',
   darker: '#091A7A',
   contrastText: '#fff'
@@ -107,7 +107,7 @@ const COMMON = {
   divider: GREY[500_24],
   action: {
     hover: GREY[500_8],
-    selected: GREY[500_16],
+    selected: GREY[800],
     disabled: GREY[500_80],
     disabledBackground: GREY[500_24],
     focus: GREY[500_24],

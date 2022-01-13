@@ -2,11 +2,13 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Box, Button, AppBar, Toolbar, Container } from '@mui/material';
+// Image
+import { ReactComponent as Beaten } from '../../assets/logo-beaten.svg';
 // hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
+// routes
+import { PATH_AUTH } from '../../routes/paths';
 // components
-import Logo from '../../components/Logo';
-import Label from '../../components/Label';
 import { MHidden } from '../../components/@material-extend';
 //
 import MenuDesktop from './MenuDesktop';
@@ -16,7 +18,7 @@ import navConfig from './MenuConfig';
 // ----------------------------------------------------------------------
 
 const APP_BAR_MOBILE = 64;
-const APP_BAR_DESKTOP = 88;
+const APP_BAR_DESKTOP = 80;
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: APP_BAR_MOBILE,
@@ -39,7 +41,12 @@ const ToolbarShadowStyle = styled('div')(({ theme }) => ({
   borderRadius: '50%',
   position: 'absolute',
   width: `calc(100% - 48px)`,
-  boxShadow: theme.customShadows.z8
+  boxShadow: theme.customShadows.none
+}));
+
+const BoxStyle = styled(Box)(({ theme }) => ({
+  boxShadow: theme.customShadows.none,
+  marginRight: 80
 }));
 
 // ----------------------------------------------------------------------
@@ -50,7 +57,7 @@ export default function MainNavbar() {
   const isHome = pathname === '/';
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
+    <AppBar sx={{ boxShadow: 0, bgcolor: '#0B071B' }}>
       <ToolbarStyle
         disableGutters
         sx={{
@@ -68,21 +75,32 @@ export default function MainNavbar() {
             justifyContent: 'space-between'
           }}
         >
-          <RouterLink to="/">
-            <Logo />
-          </RouterLink>
-          <Label color="info" sx={{ ml: 1 }}>
-            v2.6.0
-          </Label>
-          <Box sx={{ flexGrow: 1 }} />
+          <BoxStyle>
+            <RouterLink to="/">
+              <Beaten />
+            </RouterLink>
+          </BoxStyle>
 
           <MHidden width="mdDown">
             <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
           </MHidden>
+          <Box sx={{ flexGrow: 1 }} />
 
-          <Button variant="contained" target="_blank" href="https://material-ui.com/store/items/minimal-dashboard/">
-            Purchase Now
-          </Button>
+          <Box>
+            <Button
+              sx={{ borderRadius: 50 }}
+              variant="outlined"
+              color="secondary"
+              to={PATH_AUTH.login}
+              component={RouterLink}
+            >
+              Login
+            </Button>
+
+            <Button sx={{ ml: 2, borderRadius: 50 }} variant="contained" to={PATH_AUTH.register} component={RouterLink}>
+              Sign up
+            </Button>
+          </Box>
 
           <MHidden width="mdUp">
             <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />

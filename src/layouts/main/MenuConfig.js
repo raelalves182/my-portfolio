@@ -20,7 +20,7 @@ const menuConfig = [
     path: '/'
   },
   {
-    title: 'Components',
+    title: 'Explore',
     icon: <Icon icon={roundGrain} {...ICON_SIZE} />,
     path: PATH_PAGE.components
   },
@@ -62,11 +62,6 @@ const menuConfig = [
         items: [{ title: 'Dashboard', path: PATH_DASHBOARD.root }]
       }
     ]
-  },
-  {
-    title: 'Documentation',
-    icon: <Icon icon={bookOpenFill} {...ICON_SIZE} />,
-    path: PATH_DOCS
   }
 ];
 
