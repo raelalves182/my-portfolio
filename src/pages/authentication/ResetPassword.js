@@ -43,6 +43,16 @@ const ImageStyle = styled(Box)(() => ({
   right: '30%'
 }));
 
+const NavStyle = styled(Box)(({ theme }) => ({
+  maxWidth: 384,
+  margin: 'auto',
+  display: 'flex',
+  minHeight: '90vh',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  paddingTop: theme.spacing(0)
+}));
+
 // ----------------------------------------------------------------------
 
 export default function ResetPassword() {
@@ -61,41 +71,43 @@ export default function ResetPassword() {
       </MHidden>
 
       <Container>
-        <Box sx={{ maxWidth: 384, mx: 'auto', color: 'white' }}>
-          {!sent ? (
-            <>
-              <Typography variant="h4" paragraph>
-                Forgot your password?
-              </Typography>
-              <Typography sx={{ mb: 5 }}>
-                Please enter the email address associated with your account and We will email you a link to reset your
-                password.
-              </Typography>
+        <NavStyle>
+          <Box sx={{ color: 'white' }}>
+            {!sent ? (
+              <>
+                <Typography variant="h4" paragraph>
+                  Forgot your password?
+                </Typography>
+                <Typography sx={{ mb: 5 }}>
+                  Please enter the email address associated with your account and We will email you a link to reset your
+                  password.
+                </Typography>
 
-              <ResetPasswordForm onSent={() => setSent(true)} onGetEmail={(value) => setEmail(value)} />
-            </>
-          ) : (
-            <Box sx={{ textAlign: 'center' }}>
-              <SentIcon sx={{ mb: 5, mx: 'auto', height: 160 }} />
+                <ResetPasswordForm onSent={() => setSent(true)} onGetEmail={(value) => setEmail(value)} />
+              </>
+            ) : (
+              <Box sx={{ textAlign: 'center' }}>
+                <SentIcon sx={{ mb: 5, mx: 'auto', height: 160 }} />
 
-              <Typography variant="h3" gutterBottom>
-                Request sent successfully
-              </Typography>
-              <Typography>
-                We have sent a confirmation email to &nbsp;
-                <strong>{email}</strong>
-                <br />
-                Please check your email.
-              </Typography>
+                <Typography variant="h3" gutterBottom>
+                  Request sent successfully
+                </Typography>
+                <Typography>
+                  We have sent a confirmation email to &nbsp;
+                  <strong>{email}</strong>
+                  <br />
+                  Please check your email.
+                </Typography>
 
-              <Button size="large" variant="contained" component={RouterLink} to={PATH_AUTH.login} sx={{ mt: 5 }}>
-                Back
-              </Button>
-            </Box>
-          )}
-        </Box>
+                <Button size="large" variant="contained" component={RouterLink} to={PATH_AUTH.login} sx={{ mt: 5 }}>
+                  Back
+                </Button>
+              </Box>
+            )}
+          </Box>
+        </NavStyle>
         <Box>
-          <Typography variant="subtitle2" sx={{ pt: 12, textAlign: 'center', color: 'white' }}>
+          <Typography variant="subtitle2" sx={{ pt: 11, textAlign: 'center', color: 'white' }}>
             Already have an account?&nbsp;
             <Link to={PATH_AUTH.login} component={RouterLink}>
               Login
