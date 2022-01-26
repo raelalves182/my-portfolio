@@ -77,12 +77,12 @@ export default function Register() {
           <RegisterForm />
 
           <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3, fontSize: '12px' }}>
-            By registering, I agree to Minimal&nbsp;
-            <Link underline="always" color="text.primary" href="#">
+            By registering, I agree to Beaten&nbsp;
+            <Link underline="none" color="text.secondary" href="#">
               Terms of Service
             </Link>
             &nbsp;and&nbsp;
-            <Link underline="always" color="text.primary" href="#">
+            <Link underline="none" color="text.secondary" href="#">
               Privacy Policy
             </Link>
             .
