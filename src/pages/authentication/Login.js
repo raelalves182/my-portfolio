@@ -68,7 +68,9 @@ export default function Login() {
       <MHidden width="mdDown">
         <SectionStyle>
           <ImageStyle>
-            <Beaten />
+            <Link href="/" alt="Home">
+              <Beaten />
+            </Link>
           </ImageStyle>
           <img src="/static/illustrations/auth.png" alt="login" />
         </SectionStyle>

@@ -64,7 +64,9 @@ export default function ResetPassword() {
       <MHidden width="mdDown">
         <SectionStyle>
           <ImageStyle>
-            <Beaten />
+            <Link href="/" alt="Home">
+              <Beaten />
+            </Link>
           </ImageStyle>
           <img alt="register" src="/static/illustrations/auth.png" />
         </SectionStyle>
