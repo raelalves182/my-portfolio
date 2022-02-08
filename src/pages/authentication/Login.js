@@ -18,14 +18,13 @@ import AuthFirebaseSocials from '../../components/authentication/AuthFirebaseSoc
 
 const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
-    display: 'flex'
+    display: 'flex',
+    height: '100vh'
   }
 }));
 
 const SectionStyle = styled(Card)(({ theme }) => ({
   position: 'relative',
-  width: '100%',
-  maxWidth: 464,
   boxShadow: 'none',
   backgroundColor: 'none',
   display: 'flex',
@@ -44,10 +43,10 @@ const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 384,
   margin: 'auto',
   display: 'flex',
-  minHeight: '80vh',
+  minHeight: '97vh',
   flexDirection: 'column',
   justifyContent: 'center',
-  padding: theme.spacing(13, 0)
+  padding: theme.spacing(0, 0)
 }));
 
 // ----------------------------------------------------------------------
@@ -72,7 +71,7 @@ export default function Login() {
               <Beaten />
             </Link>
           </ImageStyle>
-          <img src="/static/illustrations/auth.png" alt="login" />
+          <img src="/static/illustrations/bg-auth-image.png" alt="login" />
         </SectionStyle>
       </MHidden>
 
@@ -98,7 +97,7 @@ export default function Login() {
           )}
         </ContentStyle>
         <Box width="smUp">
-          <Typography variant="subtitle2" sx={{ pt: 11, textAlign: 'center', color: 'white' }}>
+          <Typography variant="subtitle2" sx={{ textAlign: 'center', color: 'white' }}>
             Already have an account?&nbsp;
             <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
               Get started

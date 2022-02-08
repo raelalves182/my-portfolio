@@ -19,16 +19,11 @@ import { SentIcon } from '../../assets';
 const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     display: 'flex',
-    minHeight: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing(0)
+    height: '100vh'
   }
 }));
 
 const SectionStyle = styled(Card)(({ theme }) => ({
-  width: '100%',
-  maxWidth: 464,
   boxShadow: 'none',
   backgroundColor: 'none',
   display: 'flex',
@@ -47,7 +42,7 @@ const NavStyle = styled(Box)(({ theme }) => ({
   maxWidth: 384,
   margin: 'auto',
   display: 'flex',
-  minHeight: '90vh',
+  minHeight: '97vh',
   flexDirection: 'column',
   justifyContent: 'center',
   paddingTop: theme.spacing(0)
@@ -56,7 +51,7 @@ const NavStyle = styled(Box)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function ResetPassword() {
-  const [email, setEmail] = useState('');
+  const [setEmail] = useState('');
   const [sent, setSent] = useState(false);
 
   return (
@@ -68,11 +63,11 @@ export default function ResetPassword() {
               <Beaten />
             </Link>
           </ImageStyle>
-          <img alt="register" src="/static/illustrations/auth.png" />
+          <img alt="register" src="/static/illustrations/bg-auth-image.png" />
         </SectionStyle>
       </MHidden>
 
-      <Container>
+      <Container maxWidth="sm">
         <NavStyle>
           <Box sx={{ color: 'white' }}>
             {!sent ? (
@@ -91,17 +86,26 @@ export default function ResetPassword() {
               <Box sx={{ textAlign: 'center' }}>
                 <SentIcon sx={{ mb: 5, mx: 'auto', height: 160 }} />
 
-                <Typography variant="h3" gutterBottom>
-                  Request sent successfully
+                <Typography variant="h4" gutterBottom>
+                  You've got mail!
                 </Typography>
                 <Typography>
-                  We have sent a confirmation email to &nbsp;
-                  <strong>{email}</strong>
+                  You will receive an email with instructions on how to reset your password in a few minutes.
                   <br />
-                  Please check your email.
+                  <Box
+                    sx={{ mt: 1.5, ml: '70px', color: '#FF0099', fontSize: '12px', maxWidth: 230, textAlign: 'center' }}
+                  >
+                    IF YOU DON’T SEE OUR EMAIL, MAKE SURE TO CHECK YOUR SPAM FOLDER
+                  </Box>
                 </Typography>
-
-                <Button size="large" variant="contained" component={RouterLink} to={PATH_AUTH.login} sx={{ mt: 5 }}>
+                <Button
+                  size="large"
+                  variant="contained"
+                  fullWidth
+                  component={RouterLink}
+                  to={PATH_AUTH.login}
+                  sx={{ mt: 5 }}
+                >
                   Back
                 </Button>
               </Box>
@@ -109,7 +113,7 @@ export default function ResetPassword() {
           </Box>
         </NavStyle>
         <Box>
-          <Typography variant="subtitle2" sx={{ pt: 11, textAlign: 'center', color: 'white' }}>
+          <Typography variant="subtitle2" sx={{ textAlign: 'center', color: 'white' }}>
             Already have an account?&nbsp;
             <Link to={PATH_AUTH.login} component={RouterLink}>
               Login

@@ -86,21 +86,28 @@ export default function MainNavbar() {
           </MHidden>
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box>
-            <Button
-              sx={{ borderRadius: 50 }}
-              variant="outlined"
-              color="secondary"
-              to={PATH_AUTH.login}
-              component={RouterLink}
-            >
-              Login
-            </Button>
+          <MHidden width="mdDown">
+            <Box>
+              <Button
+                sx={{ borderRadius: 50 }}
+                variant="outlined"
+                color="secondary"
+                to={PATH_AUTH.login}
+                component={RouterLink}
+              >
+                Login
+              </Button>
 
-            <Button sx={{ ml: 2, borderRadius: 50 }} variant="contained" to={PATH_AUTH.register} component={RouterLink}>
-              Sign up
-            </Button>
-          </Box>
+              <Button
+                sx={{ ml: 2, borderRadius: 50 }}
+                variant="contained"
+                to={PATH_AUTH.register}
+                component={RouterLink}
+              >
+                Sign up
+              </Button>
+            </Box>
+          </MHidden>
 
           <MHidden width="mdUp">
             <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />

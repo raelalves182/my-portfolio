@@ -16,13 +16,12 @@ import AuthFirebaseSocials from '../../components/authentication/AuthFirebaseSoc
 
 const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
-    display: 'flex'
+    display: 'flex',
+    height: '100vh'
   }
 }));
 
 const SectionStyle = styled(Card)(({ theme }) => ({
-  width: '100%',
-  maxWidth: 464,
   boxShadow: 'none',
   backgroundColor: 'none',
   display: 'flex',
@@ -41,10 +40,10 @@ const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 384,
   margin: 'auto',
   display: 'flex',
-  minHeight: '80vh',
+  minHeight: '97vh',
   flexDirection: 'column',
   justifyContent: 'center',
-  paddingTop: theme.spacing(13)
+  paddingTop: theme.spacing(0)
 }));
 
 // ----------------------------------------------------------------------
@@ -59,11 +58,11 @@ export default function Register() {
               <Beaten />
             </Link>
           </ImageStyle>
-          <img alt="register" src="/static/illustrations/auth.png" />
+          <img alt="register" src="/static/illustrations/bg-auth-image.png" />
         </SectionStyle>
       </MHidden>
 
-      <Container>
+      <Container maxWidth="sm">
         <ContentStyle>
           <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 1, color: '#fff' }}>
@@ -91,7 +90,7 @@ export default function Register() {
           </Typography>
         </ContentStyle>
         <Box width="smUp">
-          <Typography variant="subtitle2" sx={{ pt: 12, textAlign: 'center', color: 'white' }}>
+          <Typography variant="subtitle2" sx={{ textAlign: 'center', color: 'white' }}>
             Already have an account?&nbsp;
             <Link to={PATH_AUTH.login} component={RouterLink}>
               Login
