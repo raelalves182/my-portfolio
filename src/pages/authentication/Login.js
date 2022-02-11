@@ -35,8 +35,7 @@ const SectionStyle = styled(Card)(({ theme }) => ({
 const ImageStyle = styled(Box)(() => ({
   position: 'absolute',
   zIndex: '1',
-  top: '45%',
-  right: '30%'
+  top: '45%'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
