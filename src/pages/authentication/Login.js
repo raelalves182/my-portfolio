@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Card, Stack, Link, Container, Typography, Button } from '@mui/material';
 // Image
 import { ReactComponent as Beaten } from '../../assets/beaten.svg';
+import { ReactComponent as Welcome } from '../../assets/welcome.svg';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // hooks
@@ -36,6 +37,11 @@ const ImageStyle = styled(Box)(() => ({
   position: 'absolute',
   zIndex: '1',
   top: '45%'
+}));
+
+const BgStyle = styled(Box)(() => ({
+  position: 'absolute',
+  transform: 'translate(80%, 0)'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -71,6 +77,9 @@ export default function Login() {
             </Link>
           </ImageStyle>
           <img src="/static/illustrations/bg-auth-image.png" alt="login" />
+          <BgStyle>
+            <Welcome />
+          </BgStyle>
         </SectionStyle>
       </MHidden>
 
