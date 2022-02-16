@@ -4,7 +4,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Box, Card, Link, Button, Container, Typography } from '@mui/material';
 // Image
-import { ReactComponent as Beaten } from '../../assets/beaten.svg';
+import Welcome from '../../components/WelcomeBg/WelcomeBg';
+import Logo from '../../components/WelcomeBg/LogoBeaten';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // components
@@ -31,12 +32,6 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   margin: theme.spacing(0)
 }));
 
-const ImageStyle = styled(Box)(() => ({
-  position: 'absolute',
-  zIndex: '1',
-  top: '45%'
-}));
-
 const NavStyle = styled(Box)(({ theme }) => ({
   maxWidth: 384,
   margin: 'auto',
@@ -57,12 +52,11 @@ export default function ResetPassword() {
     <RootStyle title="Reset Password | Beaten Games">
       <MHidden width="mdDown">
         <SectionStyle>
-          <ImageStyle>
-            <Link href="/" alt="Home">
-              <Beaten />
-            </Link>
-          </ImageStyle>
+          <Link href="/" alt="Home">
+            <Logo />
+          </Link>
           <img alt="register" src="/static/illustrations/bg-auth-image.png" />
+          <Welcome />
         </SectionStyle>
       </MHidden>
 

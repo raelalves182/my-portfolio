@@ -3,8 +3,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Box, Card, Stack, Link, Container, Typography, Button } from '@mui/material';
 // Image
-import { ReactComponent as Beaten } from '../../assets/beaten.svg';
-import { ReactComponent as Welcome } from '../../assets/welcome.svg';
+import Welcome from '../../components/WelcomeBg/WelcomeBg';
+import Logo from '../../components/WelcomeBg/LogoBeaten';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // hooks
@@ -31,17 +31,6 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   margin: theme.spacing(0)
-}));
-
-const ImageStyle = styled(Box)(() => ({
-  position: 'absolute',
-  zIndex: '1',
-  top: '45%'
-}));
-
-const BgStyle = styled(Box)(() => ({
-  position: 'absolute',
-  transform: 'translate(80%, 0)'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -71,15 +60,11 @@ export default function Login() {
     <RootStyle title="Login | Beaten Games">
       <MHidden width="mdDown">
         <SectionStyle>
-          <ImageStyle>
-            <Link href="/" alt="Home">
-              <Beaten />
-            </Link>
-          </ImageStyle>
+          <Link href="/" alt="Home">
+            <Logo />
+          </Link>
           <img src="/static/illustrations/bg-auth-image.png" alt="login" />
-          <BgStyle>
-            <Welcome />
-          </BgStyle>
+          <Welcome />
         </SectionStyle>
       </MHidden>
 

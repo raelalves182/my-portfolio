@@ -4,17 +4,17 @@ import Welcome from '../../assets/welcome.svg';
 
 const BgStyle = styled(Box)(() => ({
   position: 'absolute',
-  transform: 'translate(34%, 0)',
-  top: '57px',
-  minWidth: '50vh',
-  minHeight: '57vw'
+  transform: 'translate(0, -50%)',
+  top: '50%',
+  right: '20px',
+  width: '30%'
 }));
 
-export default function welcomBg() {
+export default function WelcomBg() {
   return (
     <Box>
       <BgStyle>
-        <Welcome />;
+        <img alt="logo" width="100%" height="100%" src={Welcome} />
       </BgStyle>
     </Box>
   );
