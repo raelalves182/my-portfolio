@@ -6,10 +6,12 @@ import { Box, Button, AppBar, Toolbar, Container } from '@mui/material';
 import { ReactComponent as Beaten } from '../../assets/logo-beaten.svg';
 // hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
+import useAuth from '../../hooks/useAuth';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // components
 import { MHidden } from '../../components/@material-extend';
+import Navbar from './NavbarLog';
 //
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
@@ -55,6 +57,11 @@ export default function MainNavbar() {
   const isOffset = useOffSetTop(100);
   const { pathname } = useLocation();
   const isHome = pathname === '/';
+  const Authenticated = useAuth().isAuthenticated;
+
+  if (Authenticated) {
+    return <Navbar />;
+  }
 
   return (
     <AppBar sx={{ boxShadow: 0, bgcolor: '#0B071B' }}>
