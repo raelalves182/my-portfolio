@@ -1,0 +1,113 @@
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  overflow: hidden;
+  background-color: #19a2ae;
+}
+
+body::before {
+  content: '';
+  background: url("../Assets/bg-pattern-top.svg") no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translate(-24%, -78%) rotate(95deg) scaleX(-1);
+          transform: translate(-24%, -78%) rotate(95deg) scaleX(-1);
+}
+
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container::before {
+  content: '';
+  background: url("../Assets/bg-pattern-bottom.svg") no-repeat;
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  position: absolute;
+  -webkit-transform: translate(40%, 60%);
+          transform: translate(40%, 60%);
+}
+
+.container .content {
+  position: relative;
+  width: 320px;
+  margin: auto;
+  background: aliceblue;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 330px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content::before {
+  content: '';
+  background: url("../Assets/bg-pattern-card.svg");
+  position: absolute;
+  border-radius: 40px 40px 0 0;
+  width: 100%;
+  height: 40%;
+  top: 0;
+}
+
+.container .content img {
+  border-radius: 50%;
+  position: relative;
+  top: -25px;
+}
+
+.container .content div > h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.container .content .color {
+  text-align: center;
+  color: #7a7676;
+}
+
+.container .content div > p {
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.container .content .article {
+  margin-bottom: -30%;
+}
+
+.container .content .article > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+
+.container .content .article > ul > li {
+  margin-right: 50px;
+  font-weight: bold;
+}
+
+.container .content .article > ul > li > span {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+  font-weight: normal;
+  color: #7a7676;
+}
+/*# sourceMappingURL=main.css.map */
