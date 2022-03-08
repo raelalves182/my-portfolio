@@ -38,7 +38,9 @@ body::before {
   width: 320px;
   margin: auto;
   background: aliceblue;
-  border-radius: 40px;
+  border-radius: 16px;
+  -webkit-box-shadow: 10px 10px 26px #19a2ae;
+          box-shadow: 10px 10px 26px #19a2ae;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,20 +61,21 @@ body::before {
   content: '';
   background: url("../Assets/bg-pattern-card.svg");
   position: absolute;
-  border-radius: 40px 40px 0 0;
+  border-radius: 16px 16px 0 0;
   width: 100%;
   height: 40%;
   top: 0;
 }
 
 .container .content img {
+  border: 5px solid #fff;
   border-radius: 50%;
   position: relative;
   top: -25px;
 }
 
 .container .content div > h1 {
-  margin: 0;
+  margin: -16px 0 0;
   font-size: 18px;
 }
 
@@ -82,7 +85,7 @@ body::before {
 }
 
 .container .content div > p {
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 10px;
 }
 
